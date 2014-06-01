@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var layoutService = require('../services/layout-service');
+var nothsLayout = require('../lib/noths-layout');
 
 var renderResponse = function(view, locals, req, res, next) {
     res.render(view, locals, function(err, html) {
@@ -9,7 +9,7 @@ var renderResponse = function(view, locals, req, res, next) {
             return;
         }
 
-        res.send(layoutService.getLayout());
+        res.send(nothsLayout.layout);
     });
 };
 

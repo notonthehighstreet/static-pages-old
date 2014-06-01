@@ -5,9 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var appConfig = require('./app-config');
 var routes = require('./routes/index');
 
-var layoutService = require('./services/layout-service');
+var nothsLayout = require('./lib/noths-layout');
+nothsLayout.cacheLayout = appConfig.cacheLayout
 
 var app = express();
 
@@ -23,7 +25,7 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(layoutService.requestLayout);
+app.use(nothsLayout.fetchLayout);
 
 app.use('/', routes);
 
