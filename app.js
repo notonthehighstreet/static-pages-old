@@ -9,7 +9,9 @@ var appConfig = require('./app-config');
 var routes = require('./routes/index');
 
 var nothsLayout = require('./lib/noths-layout');
-nothsLayout.cacheLayout = appConfig.cacheLayout
+// TODO: This could be pulled into an initializer
+nothsLayout.cacheLayout = appConfig.cacheLayout;
+nothsLayout.url = appConfig.nothsLayoutUrl;
 
 var app = express();
 
