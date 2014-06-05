@@ -47,12 +47,12 @@ if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
 
-        new PageBuilder('error', res, next, {
-            message: err.message,
-            error: err
-        }).build(function(html) {
-            res.send(html);
-        });
+        new PageBuilder('error', nothsLayout, res, next)
+            .setLocals({
+                message: err.message,
+                error: err
+            })
+            .render();
     });
 }
 
@@ -61,12 +61,12 @@ if (app.get('env') === 'development') {
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
 
-    new PageBuilder('error', res, next, {
-        message: err.message,
-        error: {}
-    }).build(function(html) {
-        res.send(html);
-    });
+    new PageBuilder('error', nothsLayout, res, next)
+        .setLocals({
+            message: err.message,
+            error: {}
+        })
+        .render();
 });
 
 module.exports = app;
