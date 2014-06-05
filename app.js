@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var PageBuilder = require('./lib/page-builder');
 var appConfig = require('./app-config');
 var routes = require('./routes/index');
 
@@ -45,9 +46,12 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
+
+        new PageBuilder('error', res, next, {
             message: err.message,
             error: err
+        }).build(function(html) {
+            res.send(html);
         });
     });
 }
@@ -56,11 +60,13 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+
+    new PageBuilder('error', res, next, {
         message: err.message,
         error: {}
+    }).build(function(html) {
+        res.send(html);
     });
 });
-
 
 module.exports = app;
