@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+var util = require('util');
+var recluster = require('recluster');
+var path = require('path');
+var fs = require('fs');
+
+var cluster = recluster(path.join(__dirname, 'www'));
+cluster.run();
+
+process.on('SIGUSR2', function() {
+    util.log('Got SIGUSR2, reloading cluster...');
+    cluster.reload();
+});
+
+fs.watchFile(path.join(__dirname, '../reload'), function(curr, prev) {
+    util.log('Restart file touched, reloading cluster...');
+    cluster.reload();
+});
+
+util.log("spawned cluster, kill -s SIGUSR2", process.pid, "to reload");
