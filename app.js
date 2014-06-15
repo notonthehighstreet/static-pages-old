@@ -4,12 +4,12 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var layoutFetcher = require('layout-fetcher');
 
 var PageBuilder = require('./lib/page-builder');
 var appConfig = require('./app-config');
 var routes = require('./routes/index');
 
-var layoutFetcher = require('./lib/layout-fetcher');
 var layoutService = require('./services/layout-service');
 
 var app = express();
