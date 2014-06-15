@@ -9,10 +9,8 @@ var PageBuilder = require('./lib/page-builder');
 var appConfig = require('./app-config');
 var routes = require('./routes/index');
 
-var nothsLayout = require('./lib/noths-layout');
-// TODO: This could be pulled into an initializer
-nothsLayout.cacheLayout = appConfig.cacheLayout;
-nothsLayout.url = appConfig.nothsLayoutUrl;
+var layoutFetcher = require('./lib/layout-fetcher');
+var layoutService = require('./services/layout-service');
 
 var app = express();
 
@@ -31,7 +29,13 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(nothsLayout.fetchLayout);
+app.use(layoutFetcher({
+    url:         appConfig.nothsLayoutUrl,
+    cacheLayout: appConfig.cacheLayout,
+    done:        function(layout) {
+        layoutService.layout = layout;
+    }
+}));
 
 app.use('/', routes);
 
