@@ -32,9 +32,18 @@ app.use(lessMiddleware(path.join(__dirname, 'public')));
 var publicDirectory = (app.get('env') === 'development') ? 'public' : 'build';
 app.use(express.static(path.join(__dirname, publicDirectory)));
 
+var layoutUrl = process.env.LAYOUT || appConfig.nothsLayoutUrl;
+var cacheLayout = appConfig.cacheLayout;
+
+if (process.env.CACHE_LAYOUT) {
+    cacheLayout = (process.env.CACHE_LAYOUT === "true") ? true : false;
+}
+
+console.log(cacheLayout);
+
 app.use(layoutFetcher({
-    url:         appConfig.nothsLayoutUrl,
-    cacheLayout: appConfig.cacheLayout,
+    url:         layoutUrl,
+    cacheLayout: cacheLayout,
     done:        function(layout) {
         layoutService.layout = layout;
     }
