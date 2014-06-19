@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var layoutFetcher = require('layout-fetcher');
 
-var PageBuilder = require('./lib/page-builder');
 var appConfig = require('./app-config');
 var routes = require('./routes/index');
 
