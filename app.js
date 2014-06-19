@@ -39,8 +39,6 @@ if (process.env.CACHE_LAYOUT) {
     cacheLayout = (process.env.CACHE_LAYOUT === "true") ? true : false;
 }
 
-console.log(cacheLayout);
-
 app.use(layoutFetcher({
     url:         layoutUrl,
     cacheLayout: cacheLayout,
