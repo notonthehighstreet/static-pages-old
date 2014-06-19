@@ -12,6 +12,7 @@
     "express": "~4.2.0",
     "jade": "~1.3.0",
     "layout-fetcher": "git://github.com/danhart/layout-fetcher.git#cd8bc0571c27d49c2f6baca3abf180acdcb2ae0f",
+    "less-middleware": "^1.0.3",
     "morgan": "~1.0.0",
     "mustache": "^0.8.1",
     "page-builder": "git://github.com/danhart/page-builder.git#22575a5a9ab6a153b73d36bee557fe96a491c430",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
+    "grunt-contrib-less": "^0.11.2",
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-contrib-stylus": "^0.17.0"
   }

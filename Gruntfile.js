@@ -13,6 +13,17 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        less: {
+            compile: {
+                files: [{
+                    expand: true,
+                    cwd: 'public/',
+                    src: ['**/*.less'],
+                    dest: 'build/',
+                    ext: '.css',
+                }]
+            }
+        },
         requirejs: {
             compile: {
                 options: {
@@ -30,7 +41,8 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
-    grunt.registerTask('default', ['stylus', 'requirejs']);
+    grunt.registerTask('default', ['stylus', 'less', 'requirejs']);
 
 };
