@@ -1,3 +1,3 @@
-define(function() {
+define(['require'], function() {
     console.log("hello");
 });

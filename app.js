@@ -26,7 +26,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
+
+var publicDirectory = (app.get('env') === 'development') ? 'public' : 'build';
+app.use(express.static(path.join(__dirname, publicDirectory)));
 
 app.use(layoutFetcher({
     url:         appConfig.nothsLayoutUrl,
