@@ -20,8 +20,7 @@ app.set('view engine', 'jade');
 
 app.use(favicon());
 
-var loggerMode = (app.get('env') === 'development') ? 'dev' : '';
-app.use(logger(loggerMode));
+app.use(logger(appConfig.loggerMode));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -29,19 +28,11 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 
-var publicDirectory = (app.get('env') === 'development') ? 'public' : 'build';
-app.use(express.static(path.join(__dirname, publicDirectory)));
-
-var layoutUrl = process.env.LAYOUT || appConfig.nothsLayoutUrl;
-var cacheLayout = appConfig.cacheLayout;
-
-if (process.env.CACHE_LAYOUT) {
-    cacheLayout = (process.env.CACHE_LAYOUT === "true") ? true : false;
-}
+app.use(express.static(path.join(__dirname, appConfig.publicDir)));
 
 app.use(layoutFetcher({
-    url:         layoutUrl,
-    cacheLayout: cacheLayout,
+    url:         appConfig.nothsLayoutUrl,
+    cacheLayout: appConfig.cacheLayout,
     done:        function(layout) {
         layoutService.layout = layout;
     }
