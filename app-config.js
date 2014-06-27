@@ -22,10 +22,4 @@ if (process.env.LAYOUT) {
     config.nothsLayoutUrl = process.env.LAYOUT;
 }
 
-if (process.env.NOTHS_API_TOKEN) {
-    config.nothsApiToken = process.env.NOTHS_API_TOKEN;
-} else {
-    throw "You must provide a NOTHS_API_TOKEN";
-}
-
 module.exports = config;
