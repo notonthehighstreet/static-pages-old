@@ -1,0 +1,107 @@
+include nav.jade
+
+section.intro#about_make_wards
+    div.background
+    h1.logo Make Awards
+    div.content_wrapper
+        p Every year, we celebrate the achievements and successes of the talented Partners that sell through our site. The Make Awards winners represent the best of creativity, originality and entrepreneurial thinking. It’s our very great privilege to honour them.
+
+section.awards_categories#awards_categories
+    
+    header
+        div.content_wrapper
+            h2 awards & categories
+            p We’re saluting the best and brightest of our Partners with 12 awards, plus – for the first time – recognising future stars from businesses across the UK.
+
+    div.accordian
+        ul
+            li.product_category
+                div.award_content
+                    div.award_intro
+                        img(src='http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/product_icn.png', alt='product award icon')
+                        h4 product <span>category</span>
+                        p Rewarding original products that demonstrate innovation and are produced to the highest standard.
+                    div.award_description_wrapper
+                        div.award_description
+                            include awards/product_award
+
+            li.customers_category
+                div.award_content
+                    div.award_intro
+                        img(src='http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/customer_icn.png', alt='customers award icon')
+                        h4 customer <span>category</span>
+                        p Customer choice awards recognising the best service and most-loved products.
+                    div.award_description_wrapper
+                        div.award_description
+                            include awards/customer_award
+
+            li.business_category
+                div.award_content
+                    div.award_intro
+                        img(src='http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/business_icn.png', alt='business award icon')
+                        h4 business <span>category</span>
+                        p Recognising excellence in business practices and exceptional growth.
+                    div.award_description_wrapper
+                        div.award_description
+                            include awards/business_award
+
+            li.community_category
+                div.award_content
+                    div.award_intro
+                        img(src='http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/community_icn.png', alt='community award icon')
+                        h4 community <span>category</span>
+                        p Celebrating Partners who have gone above and beyond to offer support and expertise to their peers.
+                    div.award_description_wrapper
+                        div.award_description
+                            include awards/community_award
+
+            li.future_category
+                div.award_content
+                    div.award_intro
+                        img(src='http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/future_icn.png', alt='future award icon')
+                        h4 future <span>star award</span>
+                        p Searching for unique, innovative designers and designer makers from across the UK to join us at notonthehighstreet.com.
+                    div.award_description_wrapper
+                        div.award_description
+                            include awards/future_award
+
+section.judges#judges
+    
+    div.content_wrapper
+
+        header
+            .judge_badge
+                h2 our judges
+                p The judging panel for the notonthehighstreet.com Make Awards 2014 brings together a wealth of expertise from the worlds of retail, entrepreneurship, business and marketing.
+
+        ul.the_judges
+            li 
+                figure
+                    img(src='http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/judges/holly_tucker.jpg', alt='Holly Tucker')
+                    figcaption
+                        h3 Holly Tucker
+                        p Holly Tucker is co-founder of notonthehighstreet.com. After starting her career in advertising, Holly’s inspiration for the site came when she created Your Local Fair - upmarket events staged in south west London.
+                div
+                    h4 Holly Tucker
+                    h5 founder & president, <span>notonthehighstreet.com</span>
+            li 
+                figure
+                    img(src='http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/judges/sophie_cornish.jpg', alt='Sophie Cornish')
+                    figcaption
+                        h3 Sophie Cornish
+                        p Sophie Cornish is co-founder of notonthehighstreet.com. Previously both a journalist and marketer, Sophie started her career as a beauty editor on women’s magazines, then in brand development and advertising.
+                div
+                    h4 Sophie Cornish
+                    h5 founder & director, <span>notonthehighstreet.com</span>
+        
+        div.coming_soon_judges
+            p  We'll be revealing our full (and very exciting) line-up soon…
+
+section.cast_your_vote
+    div.content_wrapper
+        header
+            h1 cast your vote
+
+            p Have a favourite seller whose products or customer service you’ve found second-to-none? Your vote gets them one step closer to becoming award winners. Show your support.
+
+            a(href="http://www.surveygizmo.com/s3/1722458/The-Make-Awards-2014-Customer-vote",class="button_mk_aw") cast your vote &gt;
