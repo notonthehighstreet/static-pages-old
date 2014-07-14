@@ -1,0 +1,1309 @@
+@mobile: ~"only screen and (max-width : 640px)";
+@tablet: ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px)";
+
+@body_font: 'NOTHS Sans No3 Regular','Helvetica Neue','HelveticaNeue',Arial,sans-serif;
+@title_font: 'NOTHS Sans No2 Semibold','Helvetica Neue','HelveticaNeue',Arial,sans-serif;
+@title_font_regular:'NOTHS Sans No2 Regular','Helvetica Neue','HelveticaNeue',Arial,sans-serif;
+@script_font:'Suomi Hand', Arial,sans-serif;
+
+/*
+ RESET INHERITED LAYOUT STYLES
+*/
+
+#site_container #content {
+    width: 100%;
+
+    @media @mobile {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.static_header {
+    display: none;
+}
+
+/* 
+    Adding font-families on the iframe
+*/
+
+@font-face {
+    font-family: 'NOTHS Sans No2 Regular';
+    src: url('http://www.notonthehighstreet.com:80/stylesheets/fonts/noths_sans_2_regular.eot?#iefix') format('embedded-opentype'),
+         url('http://www.notonthehighstreet.com:80/stylesheets/fonts/noths_sans_2_regular.woff') format('woff'),
+         url('http://www.notonthehighstreet.com:80/stylesheets/fonts/noths_sans_2_regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'NOTHS Sans No2 SemiBold';
+    src: url('http://www.notonthehighstreet.com:80/stylesheets/fonts/noths_sans_2_semibold.eot?#iefix') format('embedded-opentype'),
+         url('http://www.notonthehighstreet.com:80/stylesheets/fonts/noths_sans_2_semibold.woff') format('woff'),
+         url('http://www.notonthehighstreet.com:80/stylesheets/fonts/noths_sans_2_semibold.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'NOTHS Sans No3 Regular';
+    src: url('http://www.notonthehighstreet.com:80/stylesheets/fonts/noths_sans_3_regular.eot?#iefix') format('embedded-opentype'),
+         url('http://www.notonthehighstreet.com:80/stylesheets/fonts/noths_sans_3_regular.woff') format('woff'),
+         url('http://www.notonthehighstreet.com:80/stylesheets/fonts/noths_sans_3_regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Suomi Hand';
+    src: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/fonts/Suomi-Hand.eot?#iefix') format('embedded-opentype'),
+         url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/fonts/Suomi-Hand.woff') format('woff'),
+         url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/fonts/Suomi-Hand.ttf')  format('truetype');
+}
+
+section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    clear: both;
+    display: block;
+}
+.content_wrapper {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+}
+
+.button_mk_aw {
+    font-size: 17px;
+    font-family: @body_font;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #13bcd5;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    margin: 20px 20px 20px 0;
+
+    @media @mobile, @tablet {
+        font-size: 14px;
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    &:hover {
+        background: #afcc5d;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    &.text_button {
+        font-size: 14px;
+        color: #434343;
+        border-bottom: 2px solid;
+        background: none;
+
+        &:hover {
+            background: none;
+            color: #13bcd5;
+            text-shadow: none;
+        }
+    }
+}
+
+nav.make_awards_nav {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+
+    &:after {
+        clear: both;
+        height: 0;
+        content: '';
+        width: 0;
+        display: block;
+    }
+
+
+    ul {
+        list-style: none;
+
+        li {
+            float: left;
+            padding: 16px;
+            @media @mobile { border-bottom: 1px solid #cecece;}
+
+            a {
+                position: relative;
+                text-decoration: none;
+                font-family: @body_font;
+                font-size: 14px;
+                text-transform: uppercase;
+                color: #434343;
+                padding:  5px 10px;
+                line-height: 1;
+
+                &:after {
+                    content: '';
+                    height: 2px;
+                    position: absolute;
+                    left: 10px;
+                    right: 10px;
+                    bottom: 0;
+                    background: #434343;
+                    background: rgba(65, 65, 65, 0.7);
+                    -webkit-transition: all 0.5s;
+                    transition: all 0.5s;
+
+                    @media @mobile { display: none; }
+                }
+
+                &:hover {
+
+                    &:after {
+                        background: #434343;
+                        left: 20px;
+                        right: 20px;
+                    }
+                }
+
+            }
+        }
+    }
+    @media @mobile {
+        width: 100%;
+
+        ul {
+          display: block;
+
+          li {
+            float: none;
+            display: block;
+            text-align: center;
+
+            a {
+                display: block;
+            }
+          }
+        }
+
+    }
+}
+
+.intro {
+    position: relative;
+    margin: 0 0 30px 0;
+    overflow: hidden;
+
+    .background {
+        background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/logo_bg.png') no-repeat 50% 32%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 0;
+    }
+
+    h1.logo {
+        text-align: center;
+        margin: 0 auto;
+        background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/logo.png') no-repeat 0 0;
+        width: 392px;
+        height: 404px;
+        text-indent: -9999px;
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        margin: -202px 0 0 -191px;
+    }
+
+    p {
+        text-align: center;
+        margin: 0 auto;
+        padding: 500px 2em 0 2em;
+        max-width: 80%;
+        line-height: 1.6;
+    }
+    @media @mobile {
+        .background {
+            background-size: 490px auto;
+            background-position: top center;
+        }
+        h1.logo {
+            width: 100%;
+            left: 0;
+            top: 0;
+            margin: 0;          
+            background-size: contain;
+        }
+        p {
+            padding: 21em .5em 0 .5em;
+        }
+    }
+}
+
+.awards_categories {
+    text-align: center;
+    margin: 0 auto;
+    float: left;
+    
+    header {
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, .1);
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+        box-shadow: 2px 4px 16px 1px rgba(0, 0, 0, .5);
+        padding: 0 0 30px 0;
+  
+        h2 {
+            font-family: @title_font;
+            color: #fff;
+            padding: 20px 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            color: #fff;
+            line-height: 1.6;
+            padding: 0 10%;
+        }
+    }
+
+    @media @mobile {
+        header {
+            position: relative;
+            height: 250px;
+            background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/accordian_bg.jpg') repeat 0 0;
+
+            h2 {
+                font-size: 32px;
+                color: #434343;
+            }
+            p {
+                color: #434343;
+            }
+        }
+    }
+}
+
+
+/* 
+    Accodian Styles
+*/
+
+@width_accordian_open: @width_accordian_default - (@width_accordian_closed*4);
+@width_accordian_closed: 8%;
+@width_accordian_default: 100%;
+
+.accordian {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/accordian_bg.jpg') repeat 0 0;
+
+    &:after {
+        clear: both;
+        height: 0;
+        content: '';
+        width: 0;
+        display: block;
+    }
+    
+    ul {
+        
+        &:hover li {
+            width: @width_accordian_closed;
+        }
+
+        @media @mobile {
+        
+            &:hover li {
+                width: @width_accordian_default;
+            }    
+        }
+
+        width: 100%;
+
+        li {
+            position: relative;
+            display: block;
+            width: 20%;
+            float: left;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            height: 880px;
+            overflow: hidden;
+
+            @media  @mobile {
+                height: auto;
+            }
+            @media @tablet {
+                height: 1100px;
+            }
+
+            &.product_category {
+                background: rgba(32, 146, 153, 0.8);
+
+                .award_description {
+                    
+                    div {
+
+                        &:after {
+                            clear: both;
+                            height: 0;
+                            content: '';
+                            width: 0;
+                            display: block;
+                        }
+
+
+                        h1 {
+                            color: rgb(14, 79, 112);
+                        }
+                        span {
+                            color:#209299;
+                        }
+                        .button_mk_aw {
+                            display: block;
+                            position: relative;
+                            float: left;
+                            width: 30%;
+
+                            @media @mobile, @tablet {
+                                display: block;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            &.customers_category {
+                background: rgba(10, 58, 90, 0.8);
+
+                .award_description {
+                    text-align: center;
+                    margin: 0 auto;
+
+                    div {
+
+                        h1 {
+                            color: rgba(32, 146, 153, 0.8);
+                        }
+                    }
+
+                    .image_selection {
+                        width: 100%;
+                        padding: 0 15%;
+                        overflow: hidden;
+                        text-align: center;
+                        margin: 0 auto;
+
+                        @media @mobile, @tablet {
+                            padding: 0;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            float: left;
+                            margin: 0 3.3% 3.3% 0;
+                            width: 30%;
+                            font-size: 13px;
+                            color:#000;
+
+                            &:hover {
+                                color: #13bcd5;
+                            }
+
+                            img {
+                                width: 100%;
+                                max-width: 170px;
+                                margin-bottom: 8px;
+                                box-shadow: 3px 3px 0 #d6d2ce;
+                                -webkit-box-shadow: 3px 3px 0 #d6d2ce;
+                            }
+                        }
+                    }
+                }
+            }
+            &.business_category {
+                background: rgba(64, 64, 64, 0.9);
+
+                .award_description {
+                    
+                    div {
+
+                        h1 {
+                            color: rgb(64, 64, 64);
+                        }
+                    }
+                }
+            }
+            &.community_category {
+                background: rgba(185, 215, 98, 0.8);
+
+                .award_description {
+                    
+                    div {
+
+                        h1 {
+                            color: rgb(64, 64, 64);
+                        }
+                        h2 {
+                            font-size: 16px;
+                            text-transform: uppercase;
+                        }
+                        .button_mk_aw.text_button {
+                            font-size: 12px;
+                            margin: 0 12px;
+                        }
+                    }
+                }
+            }
+            &.future_category {
+                background: rgba(226, 204, 181, 0.5);
+                box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.2);
+                -webkit-box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.2);
+
+                .award_content {
+                    .award_intro {
+                        h4, p {
+                            color: #555;
+                        }
+
+                        img {
+                            width: 100%;
+                            max-width: 240px;
+                            text-align: center;
+                            margin: 0 auto;
+                            padding: 320px 0 13px 0;
+
+                            @media  @mobile {
+                                width: 100%;
+                                max-width: 100px;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .award_content {
+
+                .award_intro {
+                    text-align: center;
+                    margin: 0 auto;
+                    padding: 0 16px;
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                    min-height: 880px;
+                    display: block;
+                    float: left;
+
+                    h4 {
+                        color: #fff;
+                        font-family: @title_font;
+                        font-size: 25px;
+                        text-transform: uppercase;
+                        margin-bottom: 50px;
+
+                        span {
+                            font-family: @body_font;
+                            display: block;
+                            font-size: 21px;
+                            text-shadow: none;
+                        }
+                    }
+
+                    p {
+                        color: #fff;
+                        font-size: 16px;
+                        line-height: 1.3;
+                    }
+
+                    img {
+                        width: 100%;
+                        max-width: 150px;
+                        text-align: center;
+                        margin: 0 auto;
+                        padding: 320px 0 100px 0;
+                    }
+
+                    @media  @tablet {
+                        min-height: 1100px;
+                        float: left;
+                    }
+                }
+                .award_description_wrapper {
+                    display: none;
+                    width: 0;
+                }
+            }
+
+            &:hover {
+                width: @width_accordian_open;
+
+                .award_intro {
+                    max-width: 18%;
+                    padding: 0 2%;
+                    float: left;
+
+                    img {
+                        padding: 200px 0 110px 0;
+                        width: 60%;
+                        text-align: center;
+                        margin: 0 auto;
+                    }
+                }
+
+                .award_description_wrapper {
+                    float: left;
+                    display: table;
+                    width: 77%;
+                    height: 660px;
+                    margin: 180px 16px 64px 16px;
+                    position: relative;
+                    z-index: 1;
+
+                    .award_description {
+
+                        display: table-cell; 
+                        vertical-align: middle; 
+                        text-align: center;
+                        padding: 20px;
+
+                        div {
+
+                            margin: 10px 0 16px 0;
+                            padding: 10px 0 20px 0;
+                            border-bottom: 1px solid rgba(64,64,64,0.2);
+
+                            span {
+                                text-transform: uppercase;
+                                font-family: @title_font;
+                            }
+                            p {
+                                line-height: 1.2;
+                            }
+                            &.last {
+                                border: 0;
+                            }
+                        }
+                    }                   
+
+                    &::before {
+                        -webkit-backface-visibility: hidden;
+                        content: '';
+                        position: absolute;
+                        background: rgba(255, 255, 255, 0.8);
+                        left: -2px;
+                        top: -1px;
+                        right: 8px;
+                        bottom: -1px;
+                        z-index: -1;
+                        -webkit-box-shadow: inset 0 8px 6px 6px rgba(0, 0, 0, 0.1);
+                        box-shadow: inset 0 8px 6px 6px rgba(0, 0, 0, 0.1);
+                        transform: rotate(1.2deg);
+                        -ms-transform: rotate(1.2deg);
+                        -webkit-transform: rotate(1.2deg);
+
+                        @media @mobile, @tablet {
+                            transform: rotate(0.5deg);
+                            -ms-transform: rotate(0.5deg);
+                            -webkit-transform: rotate(0.5deg);                            
+                        }
+                    }
+
+                    h1 {
+                        font-family: @script_font;
+                        font-size: 46px;
+                    }
+                }
+            }
+        }
+
+        @media @mobile {
+
+            li {
+                position: relative;
+                display: block;
+                width: 100%;
+                float: none;
+                height: auto;
+
+                .award_content {
+                    text-align: left;
+                    margin: 0 auto;
+                    max-width: 100%;
+                    padding: 0 16px;
+                    height: auto;
+
+                    .award_intro {
+                        max-width: 100%;
+                        padding: 0;
+                        height: auto;
+                        min-height: inherit;
+                        
+                        img {
+                            width: 100%;
+                            max-width: 100px;
+                            text-align: left;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            float: left;
+                            margin: auto;
+                        }
+                        h4 {
+                            margin: 20px 0 20px 20px;
+                            float: left;
+                            text-align: left;
+                        }
+                        p {
+                            display: none;
+                        }
+                    }
+                }
+
+                &:hover {
+                    width: @width_accordian_default;
+
+                    .award_description_wrapper {
+                        width: 100%;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.judges {
+    background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/accordian_bg.jpg') repeat 0 0;
+    padding: 0 0 60px 0;
+
+    .content_wrapper {
+        &:after {
+            clear: both;
+            height: 0;
+            content: '';
+            width: 0;
+            display: block;
+        }
+    }
+
+    header {
+        float: left;
+        position: relative;
+        width: 240px;
+        height: 500px;
+
+        @media @mobile {
+         width: 100%;
+         height: 230px;
+        }
+        
+        .judge_badge {
+            margin: -21px 0 0 0;
+            background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/judges_title_bg.png') no-repeat 0 0;
+            position: absolute;
+            z-index: 9999;
+
+            @media @mobile {
+                background: none;
+                margin: 40px 0 0 0;
+            }
+
+
+            h2 {
+                text-indent: -9999px;
+                background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/judges_title.png') no-repeat 0 0;
+                margin: 60px auto;
+                color: #FFF;
+                font-size: 26px;
+                text-transform: uppercase;
+                width: 185px;
+                height: 170px;
+
+                @media @mobile {
+                    text-indent: 0;
+                    background: none;
+                    margin: 0;
+                    height: auto;
+                    color: #434343;   
+                }
+            }
+            p {
+                text-align: left;
+                color: #09334f;
+                font-size: 16px;
+                line-height: 1.6;
+                padding: 0 18px;
+            }
+        }
+    }
+
+    .the_judges { 
+        margin: 95px 0 auto;
+        list-style: none;
+        text-align: center;
+        width: 720px;
+        float: left;
+        
+        li {
+            display: inline-block;
+            width: 230px;
+            margin: 0 15px 15px 0;
+            padding: 10px 10px 20px 10px;
+            text-align: center;
+            position: relative;
+            float: left;
+            -webkit-box-shadow: inset 2px 2px 17px 0px rgba(0,0,0,0.4);
+            box-shadow: inset 2px 2px 17px 0px rgba(0,0,0,0.4);
+
+            &:nth-child(3n+0) {
+                margin: 0 0 15px 0;
+            }
+
+            h4 {
+                text-transform: uppercase;
+                font-family: @title_font;
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+            h5 {
+                text-transform: uppercase;
+                font-size: 13px;
+                color: #0e3752;
+
+                span {
+                    text-transform: lowercase;
+                    display: block;
+                    font-size: 14px;
+                    line-height: 1.2
+                }
+            }
+        }
+
+        @media @mobile {
+            width: 100%;
+            margin:  0 auto;
+
+            li {
+                float: none;
+                width: auto;
+            }
+        }
+        
+        figure {
+            margin: 0 0 16px 0;
+            position: relative;
+
+            img {
+                max-width: 100%;
+                width: 100%;
+                display: block;
+                position: relative;
+            }
+
+            &:hover {
+
+                figcaption {
+                    z-index: 1;
+                    opacity: 1;
+                    transform: translate(15px, 15px);
+                    -ms-transform: translate(15px, 15px);
+                    -webkit-transform: translate(15px, 15px);
+                }
+            }
+        }
+        figcaption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            background: #c0d66e;
+            -webkit-box-shadow: inset 0 6px 6px -5px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 0 6px 6px -5px rgba(0, 0, 0, 0.4);
+
+            //transition
+            backface-visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+            -ms-transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+
+            h3 {
+                margin: 0 0 16px 0;
+                padding: 0;
+                color: #fff;
+                font-size: 22px;
+                text-transform: uppercase;
+            }
+            p {
+                font-size: 15px;
+                line-height: 1.4;
+            }
+
+            @media @mobile {
+                display: none;
+            }
+        }
+    }
+    .coming_soon_judges {
+        p {
+            text-align: center;
+            font-size: 52px;
+            width:100%;
+            font-family: @script_font;
+            display: block;
+            clear: both;
+        }
+    }
+}
+
+.cast_your_vote {
+    padding: 0 0 60px 0;
+    background-color: #0e3752;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -23px;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/cast_your_vote_bg.png') no-repeat center top;
+        display: block;
+    }
+
+    header {
+        padding: 30px 0;
+
+        h1 {
+            width: 156px;
+            height: 156px;
+            text-indent: -9999px;
+            background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/cast_your_vote_title.png') no-repeat center top;
+            float: left;
+            margin: 0 30px 0 0;
+        }
+    }
+    p {
+        padding: 30px 0 10px 0;
+        color: #FFF;
+        line-height: 1.6;
+    }
+}
+
+
+.intro_future_star_award {
+
+    &:after {
+        clear: both;
+        height: 0;
+        content: '';
+        width: 0;
+        display: block;
+    }
+    
+    .mk_terms_conditions {
+        display: inherit;
+        font-size: 13px;
+        padding: 20px 0 0 0;
+
+        a {
+            color: #0ca6d4;
+        }
+    }
+
+    .title_mk_award {
+        position: relative;
+        overflow: hidden;
+        height: 440px;
+
+        .background {
+            background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/logo_bg.png') no-repeat 50% 32%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 0;
+        }
+
+        h1.logo {
+            text-align: center;
+            margin: 0 auto;
+            background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/future_logo.png') no-repeat 0 0;
+            width: 388px;
+            height: 446px;
+            text-indent: -9999px;
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -223px 0 0 -194px;
+        }
+    }
+    
+
+    .copy_mk_award {
+        position: relative;
+        padding: 30px 0;
+
+        p {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 80%;
+            line-height: 1.6;
+            display: block;
+            margin-bottom: 30px;
+        }    
+    }
+
+    
+
+    @media @mobile {
+        .title_mk_award {
+            height: 330px;
+
+            .background {
+                background-size: 490px auto;
+                background-position: top center;
+            }
+            h1.logo {
+                width: 280px;
+                left: 20px;
+                right: 20px;
+                top: 0;
+                margin: 0;        
+                background-size: 100%;
+            }
+        }
+
+        .copy_mk_award {
+            padding: 0;
+
+            p {
+                padding: 1em .5em 0 .5em;
+            }
+        }
+    }
+}
+
+.nominate_form {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.about_future_star_awards {
+    background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/about_future_star_award_bg.jpg') no-repeat 0 0;    
+    padding: 60px 0;
+    background-size: 100% 550px;
+
+    @media  @mobile {
+        background-size: auto 500px;
+        padding: 60px 0 30px 0;
+    }
+
+    &:after {
+        clear: both;
+        height: 0;
+        content: '';
+        width: 0;
+        display: block;
+    }
+
+    .content_wrapper {
+        background: rgba(255, 255, 255, 0.7);
+        -webkit-box-shadow: inset 2px 2px 17px 0px rgba(0,0,0,0.2);
+        box-shadow: inset 2px 2px 17px 0px rgba(0,0,0,0.2);
+        padding: 30px;
+
+        p {
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        ul {
+            text-align: left;
+            background: url('http://www.notonthehighstreet.com/email/2014/pages/the-make-awards-2014/about_future_awards_title.png') no-repeat 0 0;
+            padding: 0 0 0 280px;
+            margin: 0 0 0 -53px;
+
+            li {
+                margin: 0 0 8px 0;
+                line-height: 1.4;
+
+                ul {
+                    background: none;
+                    padding: 0 0 0 50px;
+                    margin: 20px 0 0 0;
+                } 
+            }
+        }
+        @media @mobile {
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            background: transparent;
+
+            ul {
+                padding: 240px 20px 0 20px;
+                margin: 80px 0 0 0;
+
+                li {
+                    margin:  0 0 16px 0;
+                    ul {
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+    }   
+}
+
+.are_you_a_future_star {
+    text-align: left;
+    padding: 40px 20px;
+
+    h1 {
+        font-size: 36px;
+        text-transform: uppercase;
+        margin: 0 0 8px 0;
+        font-family: @title_font;
+    }
+    p {
+        text-align: left; 
+    }
+    ul {
+        padding-left: 20px;
+        li {
+            padding-left: 10px;
+            margin: 0 0 16px 0;
+        }
+    }
+}
+
+.application_form {
+    position: relative;
+    -webkit-transition: all 1.2s;
+    transition: all 1.2s;
+    margin: 0 auto;
+    text-align: center;
+    width: 480px;
+
+    @media @mobile {
+        width: 100%;
+    }
+
+    .content_wrapper {
+        margin: 2% auto; 
+    }
+}
+
+/* 
+    woofoo noths theme overriding
+*/
+
+#container{
+    background:#fff;
+    border:0 solid #cccccc;
+}
+
+.wufoo input.text, .wufoo textarea.textarea {
+    background: none;
+}
+
+.wufoo {
+    font-family: @body_font;
+    
+    h3, h2 {
+        font-size:120%;
+        font-family:inherit;
+        color:#434343;
+    }
+
+    li {
+        width: 90%;
+
+        &.focused .instruct, &:hover .instruct {
+            left: 0;
+            width: 100%;
+            top: -50px; 
+        }
+    }
+    .info {
+        display: none;
+    }
+    .btTxt.submit {
+        border: 1px solid #056582;
+        -webkit-box-shadow: inset 0 1px 0 #3ab4d9,0 1px 1px rgba(0,0,0,0.3);
+        box-shadow: inset 0 1px 0 #3ab4d9,0 1px 1px rgba(0,0,0,0.3);
+        background-color: #0a89af;
+        background-repeat: no-repeat;
+        background-image: -ms-linear-gradient(top, #0ca6d4 0, #0a89af 100%);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#0ca6d4), to(#0a89af));
+        background-image: -webkit-linear-gradient(#0ca6d4, #0a89af);
+        background-image: -moz-linear-gradient(#0ca6d4, #0a89af);
+        background-image: -o-linear-gradient(top, #0ca6d4, #0a89af);
+        background-image: -khtml-gradient(linear, left top, left bottom, from(#0ca6d4), to(#0a89af));
+        background-image: linear-gradient(top, #0ca6d4 0, #0a89af 100%);
+        filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#0ca6d4', EndColorStr='#0a89af', GradientType=0);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#0ca6d4', EndColorStr='#0a89af', GradientType=0))";
+        filter: none;
+        font-family: "NOTHS Sans No2 Regular","Helvetica Neue","HelveticaNeue",Arial,sans-serif;
+        color: #fff;
+        text-align: center;
+        margin: 0 auto;
+        overflow: visible;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 10px 16px 8px;
+        font-size: 14px;
+        border-radius: 5px;
+        line-height: 18px;
+        height: 38px;
+        width: 45%;
+    }
+    .instruct {
+        background-color:#F5F5F5
+        border:1px solid #e6e6e6;
+        font-size:80%;
+        font-family:inherit;
+        color:#434343;
+    }
+    .section {
+        
+        div {
+            font-size:14px;
+            font-family:inherit;
+            color:#434343;
+        }
+        h3, h2 {
+            font-size: 23px;
+            font-family: inherit;
+            font-style: normal;
+            font-weight: normal;
+            color: #FFF;
+            background: #056582;
+            border: 0;
+            border-top: none;
+            padding: 6px 0 6px 14px;
+        }
+    }
+    input, textarea, select {
+        
+        &.text, &.textarea, &.select {
+            background: #fff;
+            float: left;
+            border: 1px solid #e2f0f5;
+            color: #555;
+            border-radius: 3px;
+            box-shadow: inset 0 2px 6px 0 rgba(0,0,0,0.24);
+            -webkit-box-shadow: inset 0 2px 6px 0 rgba(0,0,0,0.24);
+            padding: 0 10px;
+            -webkit-appearance: none;
+            font-size: 15px;
+            height: 40px;
+            line-height: 40px;
+
+            &:focus {
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                border: 1px solid #056582;
+                outline: none;
+            }
+        }
+
+        &.textarea {
+            height: 120px;
+            min-height: 120px;
+        }
+
+    }
+    
+    
+
+    /* Form status styles */
+
+    span.req {
+        color: #cf4858 !important;
+    }
+    
+    li#errorLi {
+        border: none;
+        background-color: #fae4e1;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+    }
+    #errorMsg {
+        margin: 0 0 2px 0;
+        color: #434343 !important;
+        font-size: 100%;
+ 
+        b {
+            color: #cf4858 !important;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+        }
+    }
+    #errorMsgLbl {
+        margin: 0 0 5px 0;
+        padding: 0;
+        font-size: 18px;
+        color: #cf4858 !important;
+    }
+    
+    li.focused {
+        background: #f6f5f3;
+    }
+
+    li.error {
+        background-color: transparent !important;
+
+        input, textarea, select {
+            border: 1px solid #cf4858;
+        }
+        .desc {
+            color: #434343 !important;
+        }
+        p.error {
+            display: none;
+            margin: 0 !important;
+            padding: 16px 0 !important;
+            line-height: 10px !important;
+            font-weight: bold;
+            font-size: 14px;
+            color: #cf4858 !important;
+            clear: both;
+            background: #fae5e1;
+            padding: 10px 0;
+            width: 100%;
+            float: left;
+        }
+    }
+    
+}
+
+
+/* Typography */
+.wufoo label.desc, .wufoo legend.desc {
+    font-size: 15px;
+    color:#434343;
+    font-family: @body_font;
+}
+.wufoo li div, .wufoo li div label, .wufoo li span label {
+    font-family: @body_font;
+    color:#434343;
+    width: 100%;
+}
+
+.wufoo input.text, .wufoo textarea.textarea, .wufoo select.select, .wufoo label.choice {
+    font-size:100%;
+    font-family: @body_font;
+    color:#333;
+    width: 100%;
+}
+.wufoo label.choice {
+    color:#434343;
+}

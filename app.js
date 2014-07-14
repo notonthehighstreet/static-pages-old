@@ -8,7 +8,9 @@ var bodyParser = require('body-parser');
 var layoutFetcher = require('layout-fetcher');
 
 var appConfig = require('./app-config');
+
 var routes = require('./routes/index');
+var makeAwards2014 = require('./routes/make_awards_2014');
 
 var layoutService = require('./services/layout-service');
 
@@ -39,6 +41,7 @@ app.use(layoutFetcher({
 }));
 
 app.use('/', routes);
+app.use('/the-make-awards/2014', makeAwards2014);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
