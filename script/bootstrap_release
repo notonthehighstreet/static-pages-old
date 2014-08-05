@@ -1,0 +1,42 @@
+#!/bin/bash
+
+errors=0
+env=$RAILS_ENV
+if [ -z $1 ]; then
+  release=$HOME/current
+else
+  release=$HOME/releases/$1
+fi
+shared=$HOME/shared
+
+function run {
+  $* > .bootstrap_output 2>&1
+  local retval=$?
+  if [ $retval -ne 0 ]; then
+    cat .bootstrap_output
+    errors=1
+  fi
+  return $retval
+}
+
+function announce {
+  echo "$(date +%H:%M:%S): $*"
+}
+
+announce "Bootstrapping $release"
+cd $release
+
+announce "=> Npm install"
+run npm install
+
+announce "=> Compile Stylesheets and Javascripts"
+run node_modules/grunt-cli/bin/grunt
+
+if [ $errors -eq 0 ]; then
+  announce "=> Success"
+  touch .bootstrapped
+else
+  announce "=> Failed!"
+  exit $errors
+fi
+
