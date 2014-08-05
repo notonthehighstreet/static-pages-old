@@ -26,9 +26,6 @@ function announce {
 announce "Bootstrapping $release"
 cd $release
 
-announce "=> Npm install"
-run npm install
-
 announce "=> Compile Stylesheets and Javascripts"
 run node_modules/grunt-cli/bin/grunt
 
