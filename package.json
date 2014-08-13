@@ -14,7 +14,7 @@
     "layout-fetcher": "git://github.com/danhart/layout-fetcher.git#0ed335a704e8569515a9b55fe8d44db1b0d7cbfd",
     "less-middleware": "^1.0.3",
     "morgan": "~1.0.0",
-    "page-builder": "git://github.com/danhart/page-builder.git#22575a5a9ab6a153b73d36bee557fe96a491c430",
+    "page-builder": "git://github.com/danhart/page-builder.git#c7f9184534eefc6477f9a36d929f06c7dcbd0024",
     "recluster": "^0.3.6",
     "request": "^2.36.0",
     "static-favicon": "~1.0.0",

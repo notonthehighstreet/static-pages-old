@@ -6,7 +6,7 @@ var renderMakeAwardsPage = function(view, res, locals, next) {
     var js = '<script>require(["/static-pages-assets/scripts/make_awards_2014.js"]);</script>';
     var styles = '<link rel="stylesheet" href="/static-pages-assets/stylesheets/make_awards_2014.css"/>';
 
-    new PageBuilder(view, res.locals.layout, res, next).
+    new PageBuilder(view, res, next).
         setLocals(locals).
         setJavascript(js).
         setStyles(styles).

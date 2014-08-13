@@ -9,7 +9,7 @@ router.get('/test', function(req, res, next) {
     var styles = '<link rel="stylesheet" href="/static-pages-assets/stylesheets/test.css"/>';
     styles += '<link rel="stylesheet" href="/static-pages-assets/stylesheets/test-less.css"/>';
 
-    new PageBuilder('test', res.locals.layout, res, next).
+    new PageBuilder('test', res, next).
         setJavascript(js).
         setStyles(styles).
         render();
