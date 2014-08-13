@@ -1,24 +1,21 @@
 var express = require('express');
 var router = express.Router();
-var PageBuilder = require('page-builder');
 
-var renderMakeAwardsPage = function(view, res, locals, next) {
-    var js = '<script>require(["/static-pages-assets/scripts/make_awards_2014.js"]);</script>';
-    var styles = '<link rel="stylesheet" href="/static-pages-assets/stylesheets/make_awards_2014.css"/>';
-
-    new PageBuilder(view, res, next).
-        setLocals(locals).
-        setJavascript(js).
-        setStyles(styles).
-        render();
-};
+var js = '<script>require(["/static-pages-assets/scripts/make_awards_2014.js"]);</script>';
+var styles = '<link rel="stylesheet" href="/static-pages-assets/stylesheets/make_awards_2014.css"/>';
 
 router.get('/', function(req, res, next) {
-    renderMakeAwardsPage('make_awards_2014/show', res, {}, next);
+    res.render('make_awards_2014/show', {
+        styles: styles,
+        javascript: js
+    });
 });
 
 router.get('/apply', function(req, res, next) {
-    renderMakeAwardsPage('make_awards_2014/apply', res, {}, next);
+    res.render('make_awards_2014/apply', {
+        styles: styles,
+        javascript: js
+    });
 });
 
 module.exports = router;
