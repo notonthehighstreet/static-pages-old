@@ -17,7 +17,9 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.engine('jade', require('./template-engines/noths-jade').renderFile);
+
+// Override jade template engine handler
+app.engine('jade', require('jade-layouts').renderFile);
 
 app.use(favicon());
 

@@ -11,6 +11,7 @@
     "debug": "~0.7.4",
     "express": "~4.2.0",
     "jade": "~1.3.0",
+    "jade-layouts": "git://github.com/danhart/jade-layouts.git#89a47258a3da0b6417f4cbfd4f0d4a5eb9bb173e",
     "layout-fetcher": "git://github.com/danhart/layout-fetcher.git#0ed335a704e8569515a9b55fe8d44db1b0d7cbfd",
     "less-middleware": "^1.0.3",
     "morgan": "~1.0.0",
