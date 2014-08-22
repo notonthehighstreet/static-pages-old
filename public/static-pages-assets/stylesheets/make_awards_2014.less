@@ -66,6 +66,7 @@ section {
 }
 
 .button_mk_aw {
+    position: relative;
     font-size: 17px;
     font-family: @body_font;
     padding: 8px 12px;
@@ -99,6 +100,28 @@ section {
             color: #13bcd5;
             text-shadow: none;
         }
+    }
+}
+.image_selection {
+    .winner {
+        border: 2px solid;
+        &:after {
+            top: 75%;
+        }
+    }
+}
+.winner {
+    border: 2px solid;
+    &:after {
+        position: absolute;
+        content: 'winner';
+        top: -18px;
+        left: 20%;
+        background: #209299;
+        padding: 3px 5px;
+        border-radius: 3px;
+        color: #fff;
+        width: 60%;
     }
 }
 
@@ -389,7 +412,7 @@ nav.make_awards_nav {
 
                     .image_selection {
                         width: 100%;
-                        padding: 0 15%;
+                        padding: 0 10%;
                         overflow: hidden;
                         text-align: center;
                         margin: 0 auto;
@@ -405,6 +428,7 @@ nav.make_awards_nav {
                             width: 30%;
                             font-size: 13px;
                             color:#000;
+                            position: relative;
 
                             &:hover {
                                 color: #13bcd5;
@@ -633,7 +657,7 @@ nav.make_awards_nav {
 
                     h1 {
                         font-family: @script_font;
-                        font-size: 40px;
+                        font-size: 30px;
                     }
                 }
             }
